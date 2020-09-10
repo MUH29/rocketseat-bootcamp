@@ -20,13 +20,13 @@ class AppointmentsRepository {
 
     public findByDate(date: Date): Appointment | null {
         const findAppointment = this.appointments.find(appointment =>
-            isEqual(date, appointment.date)
+            isEqual(date, appointment.date),
         );
 
         return findAppointment || null;
     }
 
-    //provider: string, date: Date
+    // provider: string, date: Date
     public create({ provider, date }: CreateAppointmentDTO): Appointment {
         const appointment = new Appointment({ provider, date });
 
